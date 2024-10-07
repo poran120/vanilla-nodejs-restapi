@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Apple iPhone 14",
+    "description": "The latest iPhone with A15 Bionic chip and 6.1-inch Super Retina XDR display.",
+    "price": 999.99
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S23",
+    "description": "The Samsung flagship with Snapdragon 8 Gen 2 and 6.8-inch Dynamic AMOLED display.",
+    "price": 899.99
+  },
+  {
+    "id": 3,
+    "name": "OnePlus 11",
+    "description": "OnePlus 11 with 5G support, 120Hz Fluid AMOLED display, and Snapdragon 8 Gen 2 processor.",
+    "price": 699.99
+  },
+  {
+    "id": 4,
+    "name": "Sony WH-1000XM5",
+    "description": "Sony's premium noise-canceling over-ear headphones with 30 hours of battery life.",
+    "price": 349.99
+  },
+  {
+    "id": 5,
+    "name": "Google Pixel 8",
+    "description": "Google's latest smartphone with Google Tensor G3 chip and advanced camera features.",
+    "price": 799.99
+  },
+  {
+    "id": 6,
+    "name": "Xiaomi Mi 13",
+    "description": "Flagship Xiaomi smartphone with Snapdragon 8 Gen 2, 6.7-inch AMOLED display, and fast charging.",
+    "price": 599.99
+  },
+  {
+    "id": 7,
+    "name": "Apple AirPods Pro 2",
+    "description": "The second-generation AirPods Pro with improved noise cancellation and spatial audio.",
+    "price": 249.99
+  },
+  {
+    "id": 8,
+    "name": "Samsung Galaxy Tab S9",
+    "description": "High-performance tablet with an 11-inch Super AMOLED display and S Pen support.",
+    "price": 749.99
+  },
+  {
+    "id": 9,
+    "name": "Dell XPS 13",
+    "description": "Ultra-portable laptop with Intel Core i7, 13.3-inch InfinityEdge display, and 512GB SSD.",
+    "price": 1199.99
+  },
+  {
+    "id": 10,
+    "name": "Bose QuietComfort 45",
+    "description": "Top-tier noise-canceling headphones with long battery life and great sound quality.",
+    "price": 329.99
+  }
+]
