@@ -1,6 +1,6 @@
 const Product = require("../models/productModel");
 const { getPostData } = require("../utils/utils");
-// @desc Get All Products
+// Get All Products
 // Route: GET /api/products
 async function getProducts(req, res) {
   try {
@@ -12,7 +12,7 @@ async function getProducts(req, res) {
   }
 }
 
-// @ desc Get Product
+// Get Product
 // Route: GET /api/products/id
 async function getProduct(req, res, id) {
   try {
@@ -33,7 +33,7 @@ async function getProduct(req, res, id) {
   }
 }
 
-// @ desc Query Product By name
+// Query Product By name
 // Route: GET /api/products?name=name
 async function getProductByName(req, res, name) {
   try {
@@ -54,7 +54,7 @@ async function getProductByName(req, res, name) {
   }
 }
 
-// @ desc Create Product
+// Create Product
 // Route: POST /api/products
 async function createProduct(req, res) {
   try {
@@ -86,7 +86,7 @@ async function createProduct(req, res) {
   }
 }
 
-// @ desc Update Product
+// Update Product
 // Route: PUT /api/products/id
 async function updateProduct(req, res, id) {
   try {
@@ -116,10 +116,30 @@ async function updateProduct(req, res, id) {
   }
 }
 
+// Delete Product
+// Route: DELETE /api/products/id
+async function deleteProduct(req, res, id) {
+  try {
+    const product = await Product.findById(id);
+    if (!product) {
+      res.writeHead(404, { "Content-Type": "application/json" });
+      res.end(JSON.stringify({ message: "Product Not Found" }));
+    } else {
+      await Product.remove(id);
+      res.writeHead(200, { "Content-Type": "application/json" });
+      res.end(
+        JSON.stringify({ message: `Product (${id}) Deleted Successfully` })
+      );
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
 module.exports = {
   getProducts,
   getProduct,
   createProduct,
   updateProduct,
   getProductByName,
+  deleteProduct,
 };

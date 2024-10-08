@@ -2,14 +2,14 @@ const products = require("../data/products");
 const { v4: uuidv4 } = require("uuid");
 const { writeDataToFile } = require("../utils/utils");
 
-// @desc Get All Products
+// Get All Products
 function findAll() {
   return new Promise((resovle, reject) => {
     resovle(products);
   });
 }
 
-// @desc Get Product by Id
+// Get Product by Id
 function findById(id) {
   return new Promise((resovle, reject) => {
     const product = products.find((p) => p.id === id);
@@ -17,7 +17,7 @@ function findById(id) {
   });
 }
 
-// @desc Get Product filter by Name
+// Get Product filter by Name
 function filterByName(name) {
   return new Promise((resovle, reject) => {
     const filteredProducts = products.filter((product) => {
@@ -27,7 +27,7 @@ function filterByName(name) {
   });
 }
 
-// @desc Create Product
+// Create Product
 function create(product) {
   return new Promise((resovle, reject) => {
     const newProduct = { id: uuidv4(), ...product };
@@ -37,7 +37,7 @@ function create(product) {
   });
 }
 
-// @desc Update Product
+// Update Product
 function update(id, product) {
   return new Promise((resolve, reject) => {
     const index = products.findIndex((p) => p.id === id);
@@ -47,10 +47,20 @@ function update(id, product) {
   });
 }
 
+// Delete Product
+function remove(id) {
+  return new Promise((resolve, reject) => {
+    const filteredProducts = products.filter((product) => product.id !== id);
+    writeDataToFile("./data/products.json", filteredProducts);
+    resolve();
+  });
+}
+
 module.exports = {
   findAll,
   findById,
   create,
   update,
   filterByName,
+  remove,
 };
